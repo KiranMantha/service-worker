@@ -10,6 +10,12 @@ self.addEventListener('install', function (event) {
       });
     }));
 });
+
+//Activate stage
+self.addEventListener('activate', function (event) {
+  console.log('Activated sw.js', event);
+});
+
 // //If any fetch fails, it will look for the request in the cache and serve it from there first
 self.addEventListener('fetch', function (event) {
   var updateCache = function (request) {
@@ -38,11 +44,12 @@ self.addEventListener('fetch', function (event) {
 });
 
 self.addEventListener('push', function (event) {
+  console.log(event);
   if (event && event.data) {
     const data = event.data.json();
     event.waitUntil(self.swRegistration.showNotification(data.title, {
       body: data.body,
-      icon: data.icon || null
+      icon: data.icon || 'images/email.png'
     }));
   }
 });
