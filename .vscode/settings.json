@@ -1,0 +1,10 @@
+{
+  "workbench.colorTheme": "Gatito Theme",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.minimap.enabled": false,
+  "git.confirmSync": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "prettier.singleQuote": true,
+  "editor.formatOnPaste": true
+}
